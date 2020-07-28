@@ -1,0 +1,86 @@
+/* --css reset--- */
+*{
+    margin: 0px;
+    padding: 0px; 
+    font-family: 'Roboto Mono', monospace;
+}
+body{
+    display:flex;
+    text-align: center;
+    justify-content: center;
+    min-height: 150px;
+    background: black;
+    margin-top: 190px;
+}
+#loading{
+    display: flex;
+    align-items: flex-end;
+    transform: translate(-35px);
+}
+#loading span{
+    width: 20px;
+    height:20px;
+    background: #111;
+    margin: 0 10px;
+    height: calc(30px * var(--i));
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    animation: loader 2s linear infinite;
+    animation-delay: calc(0.25s * var(--i));
+}
+#loading span i{
+    display: block;
+    color: #fff;
+    font-size: 40px;
+    margin-top: 30px;
+    font-weight: bold;
+    transform: translateY(60px);
+    animation: loader2 1s ease-in-out infinite;
+    animation-delay: calc(0.09s * var(--i));
+}
+@keyframes loader{
+    0%{
+        background: #fff;
+        filter: blur(2px);
+        box-shadow: 0 0 10px #00b3ff,
+                    0 0 20px #00b3ff,
+                    0 0 40px #00b3ff,
+                    0 0 80px #00b3ff,
+                    0 0 120px #00b3ff,
+                    0 0 200px #00b3ff,
+                    0 0 300px #00b3ff,
+                    0 0 400px #00b3ff,
+                    0 0 500px #00b3ff;
+    }
+    25%,75%{
+        background: #111;
+        filter: blur(0px);
+        box-shadow: none;
+    }
+    100%{
+        color: #fff;
+        filter: blur(2px);
+        text-shadow: 0 0 10px #00b3ff,
+                    0 0 20px #00b3ff,
+                    0 0 40px #00b3ff,
+                    0 0 80px #00b3ff,
+                    0 0 120px #00b3ff,
+                    0 0 200px #00b3ff,
+                    0 0 300px #00b3ff,
+                    0 0 400px #00b3ff,
+                    0 0 500px #00b3ff;
+    }
+}
+@keyframes loader2{
+   
+        0%{
+            transform: translateY(0px);
+        }
+        20%{
+            transform: translateY(-20px);
+        }
+        40%,100%{
+            transform: translateY(0px);
+        }
+    }
